@@ -12,36 +12,15 @@ import {
   NgDocTooltipDirective,
 } from '@ng-doc/ui-kit';
 import { faBrandIcon } from '../../utils/icon.utils';
+import { preventInitialChildAnimations } from '@ng-doc/ui-kit/animations';
 
 @Component({
   selector: 'cam-docs-shell',
-  template: `
-    <ng-doc-root>
-      <ng-doc-navbar>
-        <h3 style="margin: 0" routerLink="/" class="font-bold cursor-pointer text-xl md:text-2xl" ngDocNavbarLeft>
-          CamerUI
-        </h3>
-        <div class="flex gap-3 ml-4 items-center" ngDocNavbarRight>
-          <div class="flex items-center gap-4">
-            <a href="https://github.com/angular-cameroon/ui-kit" target="_blank" rel="noopener noreferrer">
-              <i class="{{ faBrandIcon('github') }} text-2xl text-slate-800 dark:text-doc-dark-text"></i>
-            </a>
-            <a href="https://x.com/ngcameroon" target="_blank" rel="noopener noreferrer">
-              <i class="{{ faBrandIcon('x-twitter') }} text-2xl text-slate-800 dark:text-doc-dark-text"></i>
-            </a>
-          </div>
-          <ng-doc-theme-toggle />
-        </div>
-      </ng-doc-navbar>
-      <ng-doc-sidebar></ng-doc-sidebar>
-      <router-outlet></router-outlet>
-
-      <ng-template #footerContent>
-        <div class="ng-doc-footer">CamerUI &copy; Angular Cameroon</div>
-      </ng-template>
-    </ng-doc-root>
-  `,
+  styleUrl: `./docs.component.scss`,
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  animations: [preventInitialChildAnimations],
   standalone: true,
+  templateUrl: `./docs.component.html`,
   imports: [
     NgDocNavbarComponent,
     NgDocRootComponent,
@@ -54,9 +33,7 @@ import { faBrandIcon } from '../../utils/icon.utils';
     NgDocTooltipDirective,
     NgDocButtonIconComponent,
     NgDocThemeToggleComponent
-  ],
-  styles: ``,
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  ]
 })
 export class DocsComponent {
   protected readonly faBrandIcon = faBrandIcon;
