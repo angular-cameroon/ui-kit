@@ -1,1 +1,7 @@
-/* You can add global styles to this file, and also import other style files */
+// NgDoc Theme
+@import '@ng-doc/app/styles/themes/dark.css';
+
+/* TAILWIND CSS */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

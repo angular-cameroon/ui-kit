@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DocsShellComponent } from './docs-shell.component';
+import { DocsComponent } from './docs.component';
 
 describe('DocsShellComponent', () => {
-  let component: DocsShellComponent;
-  let fixture: ComponentFixture<DocsShellComponent>;
+  let component: DocsComponent;
+  let fixture: ComponentFixture<DocsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [DocsShellComponent]
+      declarations: [DocsComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(DocsShellComponent);
+    fixture = TestBed.createComponent(DocsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

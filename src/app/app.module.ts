@@ -23,10 +23,10 @@ import {
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LandingComponent } from './components/landing/landing.component';
+import { IconsModule } from './modules/icons/icons.module';
 
 @NgModule({
-  declarations: [AppComponent, LandingComponent],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -35,7 +35,8 @@ import { LandingComponent } from './components/landing/landing.component';
       scrollPositionRestoration: 'enabled',
       anchorScrolling: 'enabled',
       scrollOffset: [0, 70],
-    })
+    }),
+    IconsModule
   ],
   providers: [
     provideClientHydration(),

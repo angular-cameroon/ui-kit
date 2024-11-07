@@ -1,26 +1,26 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LandingComponent } from './components/landing/landing.component';
+import { LandingComponent } from './pages/landing/landing.component';
 
 const routes: Routes = [
   {
-    path: 'home',
-    component: LandingComponent
-  },
-  {
     path: 'docs',
-    loadChildren:  () => import('./components/docs-shell/docs-shell.component'),
+    loadChildren: () => import('./pages/docs/docs.routes'),
   },
   {
     path: '',
-    redirectTo: '/home',
-    pathMatch: 'full'
+    pathMatch: 'full',
+    loadChildren: () => import('./pages/landing/landing.routes'),
   },
-  
+  {
+    path: '**',
+    redirectTo: 'docs/getting-started/installation',
+    pathMatch: 'full',
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
