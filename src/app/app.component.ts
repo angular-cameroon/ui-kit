@@ -11,7 +11,7 @@ import { faBrandIcon } from './utils/icon.utils';
 export class AppComponent implements OnInit, OnDestroy {
   title = 'ui-kit';
   private systemDarkModeListener: MediaQueryList | undefined;
-  protected readonly faBrandIcon = faBrandIcon
+  protected readonly faBrandIcon = faBrandIcon;
 
   constructor(
     private ngDocThemeService: NgDocThemeService,

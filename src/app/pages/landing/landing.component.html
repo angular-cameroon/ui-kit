@@ -1,3 +1,18 @@
-<section class="container mx-auto">
-    <p>landing works!</p>
-</section>
+<ng-doc-root [sidebar]="false" >
+    <ng-doc-navbar>
+      <h3 style="margin: 0" routerLink="/" class="font-bold cursor-pointer text-xl md:text-2xl" ngDocNavbarLeft>CamerUI</h3>
+      <div class="flex gap-3 ml-4 items-center ng-doc-header-controls" ngDocNavbarRight>
+        <div class="flex items-center gap-4">
+          <a href="https://github.com/angular-cameroon/ui-kit" target="_blank" rel="noopener noreferrer">
+            <i class="{{ faBrandIcon('github') }} text-2xl text-slate-800 dark:text-doc-dark-text"></i>
+          </a>
+          <a href="https://x.com/ngcameroon" target="_blank" rel="noopener noreferrer">
+            <i class="{{ faBrandIcon('x-twitter') }} text-2xl text-slate-800 dark:text-doc-dark-text"></i>
+          </a>
+        </div>
+        <ng-doc-theme-toggle />
+      </div>
+    </ng-doc-navbar>
+    <router-outlet></router-outlet>
+ </ng-doc-root>
+  

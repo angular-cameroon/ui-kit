@@ -24,6 +24,7 @@ import {
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { IconsModule } from './modules/icons/icons.module';
+import { ContentComponent } from './pages/landing/content/content.component';
 
 @NgModule({
   declarations: [AppComponent],

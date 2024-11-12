@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LandingComponent } from './pages/landing/landing.component';
 
 const routes: Routes = [
   {
@@ -11,6 +10,7 @@ const routes: Routes = [
     path: '',
     pathMatch: 'full',
     loadChildren: () => import('./pages/landing/landing.routes'),
+    data: { hideSidebar: true}
   },
   {
     path: '**',
